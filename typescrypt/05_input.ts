@@ -1,3 +1,6 @@
+import PromptSync from 'prompt-sync';
+const prompt = PromptSync();
+
 let personaje = prompt("Ingrese personaje (Luke, Vader, Organa, Han Solo, Yoda):");
 let edad = Number(prompt("Ingrese edad del personaje:"));
 let fuerza = Number(prompt("Ingrese nivel de fuerza del personaje (0-100):"));

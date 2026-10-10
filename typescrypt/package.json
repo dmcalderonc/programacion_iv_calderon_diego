@@ -1,0 +1,18 @@
+{
+  "name": "typescrypt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01_hello_world.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "types": "./01_hello_world.d.ts",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/prompt-sync": "^4.2.3"
+  }
+}
