@@ -8,15 +8,15 @@ for (let i = 40; i > 0; i -= 5) {
 }
 
 for (let i = 40; i > 0; i -= 5) {
-    
+
     if (i === 20) {
         console.log("Se alcanzó el stock mínimo de seguridad (20 unidades). Se detienen las ventas masivas por hoy.");
-        break; 
+        break;
     }
-    
+
     if (i === 30) {
         console.log("El lote restante de 30 motos ya se encuentra reservado. Saltando revisión de este grupo.");
-        continue; 
+        continue;
     }
 
     console.log(`Unidades disponibles para venta directa al público: ${i}`);
