@@ -17,3 +17,5 @@ luck.rayoDeFuerza(50);
 console.log(luck.consultarEnergia());
 luck.rayoDeFuerza(25);
 console.log(luck.consultarEnergia());
+
+
