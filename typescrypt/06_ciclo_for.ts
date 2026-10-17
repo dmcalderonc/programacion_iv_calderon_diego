@@ -36,7 +36,7 @@ for (const personaje of personajes) {
 
 const cineMovie: string = "Star Wars: A New Hope";
 for (const letra of cineMovie) {
-    console.log('Letra; $ {letra}');
+    console.log(`Letra; ${letra}`);
 }
 
 interface Jedi {
