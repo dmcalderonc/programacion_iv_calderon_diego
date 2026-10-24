@@ -1,65 +1,66 @@
-// app/index.tsx — Paso3
 import { useEffect, useRef, useState } from 'react'
 import {
-    Pressable,
-    StyleSheet,
-    Text,
-    TextInput,
-    View,
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
 } from 'react-native'
 
 export default function Paso3Suma() {
-  const inputHostRef = useRef<Number>(null)
-  const inputPuertoRef = useRef<Number>(null)
+  const inputPrecioRef = useRef<TextInput>(null)
+  const inputTramitesRef = useRef<TextInput>(null)
 
-  const [host, setHost] = useState<string>('')
-  const [puerto, setPuerto] = useState<string>('22')
+  const [precioMoto, setPrecioMoto] = useState<string>('10500')
+  const [costoTramites, setCostoTramites] = useState<string>('350')
 
   useEffect(() => {
-    inputHostRef.current?.focus()
+    inputPrecioRef.current?.focus()
   }, [])
 
+  const cotizacionesSilenciosasRef = useRef<number>(0)
+  const [ultimaCotizacion, setUltimaCotizacion] = useState<string>('—')
 
-  const intentosSilenciososRef = useRef<number>(0)
-  const [ultimaConexion, setUltimaConexion] = useState<string>('—')
-
-  function intentarConexion() {
-    intentosSilenciososRef.current += 1 
+  function intentarCotizacion() {
+    cotizacionesSilenciosasRef.current += 1
     
-    setUltimaConexion(
-      `${host || 'servidor'}:${puerto} — intento #${intentosSilenciososRef.current}`
+    setUltimaCotizacion(
+      `$${precioMoto || '0'} + $${costoTramites || '0'} — cálculo #${cotizacionesSilenciosasRef.current}`
     )
   }
-  const valorImput1=  inputHostRef
-  const valorImput2=  inputPuertoRef
-  function sumaValor(){
-    valorImput1 + valorImput2
+
+  const valorImput1 = Number(precioMoto) || 0
+  const valorImput2 = Number(costoTramites) || 0
+
+  function sumaValor() {
+    return valorImput1 + valorImput2
   }
+
   return (
     <View style={styles.contenedor}>
-      <Text style={styles.titulo}>Configurar Conexión SSH</Text>
+      <Text style={styles.titulo}>Cálculo Total de Motocicleta</Text>
 
       <View style={styles.formulario}>
-        <Text style={styles.etiqueta}>Host o IP</Text>
+        <Text style={styles.etiqueta}>Precio Base de la Moto (USD)</Text>
         <TextInput
-          ref={inputHostRef}
+          ref={inputPrecioRef}
           style={styles.input}
-          value={host}
-          onChangeText={setHost}
-          placeholder="10.0.2.10"
+          value={precioMoto}
+          onChangeText={setPrecioMoto}
+          placeholder="10500"
           placeholderTextColor="#aaa"
-          autoCapitalize="none"
+          keyboardType="number-pad"
           returnKeyType="next"
-          onSubmitEditing={() => inputPuertoRef.current?.focus()}
+          onSubmitEditing={() => inputTramitesRef.current?.focus()}
         />
 
-        <Text style={styles.etiqueta}>Puerto SSH</Text>
+        <Text style={styles.etiqueta}>Gastos de Matrícula y Trámites (USD)</Text>
         <TextInput
-          ref={inputPuertoRef}
+          ref={inputTramitesRef}
           style={styles.input}
-          value={puerto}
-          onChangeText={setPuerto}
-          placeholder="22"
+          value={costoTramites}
+          onChangeText={setCostoTramites}
+          placeholder="350"
           placeholderTextColor="#aaa"
           keyboardType="number-pad"
           returnKeyType="done"
@@ -72,14 +73,15 @@ export default function Paso3Suma() {
           styles.botonActivo,
           pressed && { opacity: 0.75 },
         ]}
-        onPress={intentarConexion}
+        onPress={intentarCotizacion}
       >
-        <Text style={styles.textoBoton}>Conectar</Text>
+        <Text style={styles.textoBoton}>Calcular Total</Text>
       </Pressable>
 
-      <Text style={styles.detalle}>Último intento: {sumaValor}</Text>
+      <Text style={styles.detalle}>Precio Total Final: ${sumaValor()}</Text>
+      <Text style={styles.detalle}>Registro: {ultimaCotizacion}</Text>
       <Text style={styles.detalle}>
-        (los reintentos silenciosos no causan re-renders)
+        (los cálculos silenciosos no causan re-renders)
       </Text>
     </View>
   )

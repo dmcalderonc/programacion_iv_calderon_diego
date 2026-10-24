@@ -1,5 +1,5 @@
 // app/index.tsx — agrega al archivo existente
-import { SafeAreaView, ScrollView } from 'react-native'
+import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 
 // ─── Paso 4 — ScrollView y SafeAreaView ──────────────────────────────
 

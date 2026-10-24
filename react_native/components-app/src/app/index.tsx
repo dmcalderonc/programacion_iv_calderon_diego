@@ -11,7 +11,12 @@ import {
   View,
 } from 'react-native'
 import Paso1Simpson from './paso1_simpson'
-
+import Paso1mp from './paso1_mp'
+import Paso2mp from './paso2_mp'
+import Paso3mp from './paso3_mp'
+import Paso4mp from './paso4_mp'
+import Paso5mp from './paso5_mp'
+import Paso6mp from './paso6_mp'
 // ┌──────────────────────────────────────────────────────────────────┐
 // │  Cambia este número y guarda (Ctrl+S) para navegar entre pasos. │
 // │  1  Paso 1  Props tipadas — TarjetaServidor                     │
@@ -21,17 +26,23 @@ import Paso1Simpson from './paso1_simpson'
 // │  5  Paso 5  Modal de confirmación                               │
 // │  6  Paso 6  Pantalla completa — detalle de servidor             │
 // └──────────────────────────────────────────────────────────────────┘
-const PASO = 6
+const PASO = 6.1
 
 export default function Index() {
   switch (PASO) {
     case 1: return <Paso1 />
-    case 1.1: return <Paso1Simpson/>
+    case 1.1: return <Paso1Simpson />
+    case 1.2: return <Paso1mp/>
     case 2: return <Paso2 />
+    case 2.1: return <Paso2mp />
     case 3: return <Paso3 />
+    case 3.1: return <Paso3mp />
     case 4: return <Paso4 />
+    case 4.1: return <Paso4mp />
     case 5: return <Paso5 />
+    case 5.1: return <Paso5mp />
     case 6: return <Paso6 />
+    case 6.1: return <Paso6mp />
     default:
       return (
         <View style={estilosBase.centrado}>
