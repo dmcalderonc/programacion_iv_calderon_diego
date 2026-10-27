@@ -15,6 +15,9 @@ import {
   TextInput,
   View,
 } from 'react-native'
+import { Paso4Volumen } from './paso4Volumen'
+import { Paso5Volumen } from './paso5Volumen'
+
 
 // ┌──────────────────────────────────────────────────────────────────────┐
 // │  Cambia este número y guarda (Ctrl+S) para navegar entre pasos.     │
@@ -25,7 +28,7 @@ import {
 // │  5  Formulario con validación — agregar servidor                    │
 // │  6  KeyboardAvoidingView — formulario sin tapado de teclado         │
 // └──────────────────────────────────────────────────────────────────────┘
-const PASO = 1
+const PASO = 5.1
 
 export default function Index() {
   switch (PASO) {
@@ -37,8 +40,12 @@ export default function Index() {
       return <Paso3 />
     case 4:
       return <Paso4 />
+    case 4.1:
+      return <Paso4Volumen />
     case 5:
       return <Paso5 />
+    case 5.1:
+      return <Paso5Volumen />
     case 6:
       return <Paso6 />
     default:
