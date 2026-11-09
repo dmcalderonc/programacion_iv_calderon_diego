@@ -42,4 +42,47 @@ fun main() {
     println("Menor igual >= ${15<=10}" )
     println("Menor igual >= ${5<=10}" )
 
+
+
+    println("Operadores Logios")
+    println("&& and y")
+    println("|| and or")
+    println("! NOT")
+
+    val combustible = 80
+    val portalActivo = true
+
+    val puedoViajar = combustible >= 50 && portalActivo 
+    val negado = !portalActivo
+
+    println("¿Puede viajer? $puedeViajar")
+    println("Negado ? $negado")
+
+    val tieneTarjeta = false
+    val autorizadoPorRick = true
+    val puedeEntrar = tieneTarjeta || autorizadoPorRick
+
+    println ("¿Puede entrar? $puedeEntrar")
+
+    println("Control de Nave - Rick Sanchez y Diego Calderon")
+    val pilotoNave = "Diego Calderon"
+    val combustibleNave = 100
+    val portalesNave = 5
+    val notorActivoNave = true
+
+    println("Piloto: $pilotoNave"
+    combustibleNave +40)
+    portalesUniverso--
+    println("Combustible: $combustibleNave")
+    println("Portales Restantes : $portalesUniverso")
+    val tieneCombustible = combustibleNave >= COMBUSTIBLE MINIMO
+    val tienePortales = portalesUniverso>=0
+    val puedeViajarNave = tieneCombustible && tienePortales && motorActivoNave
+    println("¿Tiene combustible? $tieneCombustible")
+    println("¿Tiene portales? $tienePortales")
+    println("¿Tiene puede viajar? $puedeViajarNave")
+
+
 }
+
+
